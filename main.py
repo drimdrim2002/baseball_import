@@ -31,7 +31,7 @@ if __name__ == '__main__':
             continue
         initial_plan = dict()
         initial_plan['index'] = index
-        initial_plan['datetime'] = v['datetime']
+        initial_plan['datetime'] = str(v['datetime'])
         initial_plan['home'] = v['HOME']
         initial_plan['away'] = v['AWAY']
         initial_plan_list.append(initial_plan)
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     input = dict()
     input['teams'] = team_list
     input['matchs'] = baseball_match_list
-    input['initialPlan'] = baseball_match_list
+    input['initialPlan'] = initial_plan_list
     input['distanceMatrix'] = distance_matrix_list
     input['calendar'] = calendar_list
     with open("input.json", "w", encoding='UTF8') as json_file:
