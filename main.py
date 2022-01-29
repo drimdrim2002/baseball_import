@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
     input = dict()
     input['teams'] = team_list
-    input['matchs'] = baseball_match_list
+    input['matches'] = baseball_match_list
     input['initialPlan'] = initial_plan_list
     input['distanceMatrix'] = distance_matrix_list
     input['calendar'] = calendar_list
