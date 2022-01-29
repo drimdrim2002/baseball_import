@@ -34,6 +34,7 @@ if __name__ == '__main__':
         initial_plan['datetime'] = str(v['datetime'])
         initial_plan['home'] = v['HOME']
         initial_plan['away'] = v['AWAY']
+        initial_plan['consecutive'] = v['consecutive']
         initial_plan_list.append(initial_plan)
         index += 1
 
