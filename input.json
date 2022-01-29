@@ -71,7 +71,7 @@
       "longitude": 129.061647044818
     }
   ],
-  "matchs": [
+  "matches": [
     {
       "index": 0,
       "home": "SSG",
@@ -4123,41 +4123,6 @@
       "home": "NC",
       "away": "KIA",
       "consecutive": 2.0
-    },
-    {
-      "index": 270,
-      "datetime": "미편성",
-      "home": "두산",
-      "away": "한화",
-      "consecutive": NaN
-    },
-    {
-      "index": 271,
-      "datetime": "nan",
-      "home": "키움",
-      "away": "롯데",
-      "consecutive": NaN
-    },
-    {
-      "index": 272,
-      "datetime": "nan",
-      "home": "KT",
-      "away": "삼성",
-      "consecutive": NaN
-    },
-    {
-      "index": 273,
-      "datetime": "nan",
-      "home": "KIA",
-      "away": "LG",
-      "consecutive": NaN
-    },
-    {
-      "index": 274,
-      "datetime": "nan",
-      "home": "NC",
-      "away": "SSG",
-      "consecutive": NaN
     }
   ],
   "distanceMatrix": [

@@ -27,7 +27,7 @@ if __name__ == '__main__':
     index = 0
 
     for k, v in initial_plan_original.iterrows():
-        if pd.isna(v['HOME']):
+        if pd.isna(v['consecutive']):
             continue
         initial_plan = dict()
         initial_plan['index'] = index
