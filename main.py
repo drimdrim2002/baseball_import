@@ -1,6 +1,8 @@
 import pandas as pd
 import json
 
+starting_match = {'두산': '한화', '키움': '롯데', 'KT': '삼성', 'KIA': 'LG', 'NC': 'SSG'}
+
 # 스크립트를 실행하려면 여백의 녹색 버튼을 누릅니다.
 if __name__ == '__main__':
     baseball_matches_original = pd.read_excel('./baseball_schedule.xlsx', engine='openpyxl', sheet_name='matches')
@@ -15,10 +17,13 @@ if __name__ == '__main__':
             baseball_match['home'] = v['HOME']
             baseball_match['away'] = v['AWAY']
 
-            if row_index  < 2 :
-                baseball_match['matches'] = 3
-            else :
-                baseball_match['matches'] = 2
+            criteria = 2
+            if starting_match.__contains__(v['HOME']) and starting_match[v['HOME']] == v['AWAY']:
+                criteria = 1
+            if row_index < criteria:
+                baseball_match['consecutive'] = 3
+            else:
+                baseball_match['consecutive'] = 2
             baseball_match_list.append(baseball_match)
             index += 1
 
@@ -37,7 +42,6 @@ if __name__ == '__main__':
         initial_plan['consecutive'] = v['consecutive']
         initial_plan_list.append(initial_plan)
         index += 1
-
 
     distance_matrix_original = pd.read_excel('./baseball_schedule.xlsx', engine='openpyxl', sheet_name='distanceMatrix')
     distance_matrix_list = []
@@ -64,7 +68,7 @@ if __name__ == '__main__':
         calendar = dict()
         calendar['index'] = index
         calendar['datetime'] = str(v['datetime'])
-        calendar['matches'] = v['matches']
+        calendar['consecutive'] = v['matches']
         calendar['weekend'] = v['weekend']
         calendar['holiday'] = v['holiday']
         calendar_list.append(calendar)
