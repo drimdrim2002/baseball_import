@@ -11,12 +11,14 @@ if __name__ == '__main__':
     for k, v in baseball_matches_original.iterrows():
         if pd.isna(v['HOME']):
             continue
-        for row_index in range(4):
+        for row_index in range(3):
             baseball_match = dict()
             baseball_match['index'] = index
             baseball_match['home'] = v['HOME']
             baseball_match['away'] = v['AWAY']
 
+            if v['HOME'] == 'SSG' and v['AWAY'] == '두산':
+                t = 1
             criteria = 2
             if starting_match.__contains__(v['HOME']) and starting_match[v['HOME']] == v['AWAY']:
                 criteria = 1
