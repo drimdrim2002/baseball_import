@@ -29,7 +29,7 @@ if __name__ == '__main__':
             baseball_match_list.append(baseball_match)
             index += 1
 
-    initial_plan_original = pd.read_excel('./baseball_schedule.xlsx', engine='openpyxl', sheet_name='initial')
+    initial_plan_original = pd.read_excel('./baseball_schedule2.xlsx', engine='openpyxl', sheet_name='initial')
     initial_plan_list = []
     index = 0
 
@@ -98,5 +98,5 @@ if __name__ == '__main__':
     input['initialPlan'] = initial_plan_list
     input['distanceMatrix'] = distance_matrix_list
     input['calendar'] = calendar_list
-    with open("input.json", "w", encoding='UTF8') as json_file:
+    with open("input2.json", "w", encoding='UTF8') as json_file:
         baseball_match_json = json.dump(input, json_file, ensure_ascii=False)
